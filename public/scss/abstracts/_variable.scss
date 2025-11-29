@@ -1,0 +1,63 @@
+// settings
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+
+$font-main: "DM Sans", sans-serif; //change
+$font-main2: "Barlow", sans-serif;
+$fontIcon: "icomoon";
+
+:root {
+    --primary: #f45b1e;
+    --secondary: #1e2023;
+    --white: #ffffff;
+    --black: #000000;
+    --error: #C72929;
+    --red: #d52212;
+    --yelow: #ffca3b;
+    --blue: #0f2444;
+    --blue-2: #2038a5;
+    --brown: #a3723e;
+    --color-text: #666666;
+    --color-text-2: #cdcdcd;
+    --color-text-3: #999999;
+    --color-text-4: #58595c;
+    --color-text-5: #928f8e;
+    --color-text-6: rgb(153, 153, 153);
+    --color-text-7: #777777;
+    --color-text-8: #10172c;
+    --color-text-9: #bababa;
+    --color-text-10: #6d6d6d;
+    --color-text-title: #000001;
+    --color-text-title-2: #121315;
+    --color-text-title-3: #1a191d;
+    --color-text-title-4: #0d0b0a;
+    --line: #4b4d4f;
+    --line-2: #404144;
+    --line-3: #ebebeb;
+    --line-4: #d7d7d7;
+    --line-5: #3e4042;
+    --line-6: #484a4c;
+    --line-7: #FFFFFF26;
+    --line-8: #c5c5c5;
+    --line-9: #4b4d4f;
+    --line-10: #f78d62;
+    --line-11: #e1e1e2;
+    --line-12: #535457;
+    --color-bg-1: #2e3033;
+    --color-bg-2: #f0f0f0;
+    --color-bg-3: #353739;
+    --color-bg-4: #f1f1f1;
+    --color-bg-5: rgba(0, 0, 0, 0.6);
+    --color-bg-6: rgba(0, 0, 0, 0.502);
+    --color-bg-7: #f4eae0;
+    --color-bg-8: #f5f5f5;
+    --color-bg-9: rgba(255, 255, 255, 0.502);
+    --color-bg-10: rgba(255, 255, 255, 0.149);
+    --color-bg-11: #303134;
+    --color-bg-12: #E6E6E6;
+    --color-bg-13: rgba(255, 255, 255, 0.302);
+    --color-bg-14: rgba(18, 19, 21, 0.702);
+    --color-bg-15: #f8f8f8;
+    --color-bg-16: #f4f4f4;
+    --color-bg-17: #c7c7c8;
+}

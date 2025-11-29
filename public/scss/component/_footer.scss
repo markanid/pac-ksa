@@ -1,0 +1,419 @@
+.footer {
+    background-image: url("../image/section/bg-footer.jpg");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .footer-top {
+        padding-top: 119px;
+        padding-bottom: 122px;
+
+        .title-footer {
+            color: var(--white);
+            margin-bottom: 18px;
+            letter-spacing: 2.34px;
+        }
+
+        .text {
+            color: var(--color-text-2);
+            font-family: $font-main2;
+            margin-bottom: 43px;
+        }
+
+        .tf-btn {
+            span {
+                letter-spacing: 1.1px;
+            }
+        }
+    }
+
+    .menu-footer-list {
+        margin-bottom: 65px;
+    }
+
+    .footer-middle {
+        margin-bottom: 63px;
+    }
+
+    .footer-bottom {
+        margin-top: 28px;
+    }
+
+    .address {
+        padding-right: 40px;
+    }
+
+    &.style-2 {
+        background-image: unset;
+        background-color: var(--secondary);
+        position: relative;
+        overflow: hidden;
+
+        .img-item {
+            position: absolute;
+            bottom: -12px;
+            right: 0;
+        }
+
+        .logo-footer {
+            gap: 33px;
+            max-width: 428px;
+            width: 100%;
+
+            .logo {
+                max-width: 209px;
+            }
+        }
+
+        .footer-top {
+            padding-top: 97px;
+            padding-bottom: 55px;
+
+            .right {
+                max-width: 470px;
+                width: 100%;
+            }
+        }
+
+        .footer-middle {
+            align-items: start;
+            margin-top: 62px;
+            margin-bottom: 52px;
+        }
+
+        .footer-list {
+            padding-right: 0;
+        }
+
+        .line-footer {
+
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+
+        .footer-bottom {
+            margin-top: 31px;
+        }
+    }
+
+    &.style-3 {
+        background-image: unset;
+        background-color: var(--secondary);
+        position: relative;
+
+        .footer-top {
+            padding-top: 70px;
+            padding-bottom: 68px;
+        }
+
+        .footer-middle {
+            padding-top: 64px;
+            padding-bottom: 49px;
+            margin-bottom: 0;
+            align-items: start;
+
+            .logo-footer {
+                padding-top: 5px;
+            }
+        }
+
+        .img-item {
+            position: absolute;
+            bottom: 0;
+            left: 0
+        }
+
+        .social-item {
+            .title {
+                padding-bottom: 3px;
+            }
+        }
+    }
+}
+
+.list-btn {
+    @include d-flex();
+    align-items: center;
+    flex-wrap: wrap
+}
+
+.menu-footer-list {
+    @include d-flex();
+    align-items: center;
+    gap: 0 51px;
+    border-bottom: 1px solid var(--line-5);
+    flex-wrap: wrap;
+
+    .item {
+        a {
+            color: var(--white);
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 40px;
+            letter-spacing: 1px;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: auto;
+                right: 0;
+                bottom: 0;
+                height: 4px;
+                width: 0;
+                background-color: var(--primary);
+                @include transition3();
+            }
+
+            &:hover {
+                &::before {
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        }
+    }
+}
+
+.footer-middle {
+    @include d-flex();
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo-footer {
+    @include d-flex();
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 76px;
+
+    .text {
+        color: var(--color-text-2);
+        font-family: $font-main2;
+    }
+
+    .logo {
+        max-width: 199px;
+    }
+}
+
+.footer-list {
+
+    .title {
+        color: var(--white);
+    }
+
+    .item {
+        @include d-flex();
+        gap: 15px;
+        margin-bottom: 15px;
+
+        .icon {
+            i {
+                color: var(--primary);
+                font-size: 13px;
+            }
+        }
+
+        span {
+            color: var(--color-text-2);
+            font-family: $font-main2;
+        }
+
+        a {
+            color: var(--color-text-2);
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &.subscribe {
+        max-width: 370px;
+
+        .title {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: var(--color-text-2);
+            margin-bottom: 22px;
+            font-family: $font-main2;
+        }
+    }
+}
+
+.footer-bottom {
+    @include d-flex();
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 31px;
+    flex-wrap: wrap;
+    row-gap: 15px;
+
+    span {
+        color: var(--color-text-2);
+        font-family: $font-main2;
+        text-align: center
+    }
+
+    ul {
+        @include d-flex();
+        align-items: center;
+        gap: 17px;
+        flex-wrap: wrap;
+
+        a {
+            color: var(--color-text-2);
+            display: block;
+            font-family: $font-main2;
+
+            &:hover {
+                color: var(--primary);
+            }
+        }
+    }
+}
+
+.line-footer {
+    position: relative;
+    width: 100%;
+    height: 1px;
+    background-color: var(--line-5);
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background-color: var(--primary);
+        top: -4px;
+        left: 0;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background-color: var(--primary);
+        top: -4px;
+        right: 0;
+    }
+}
+
+.footer-icon-item {
+    @include d-flex();
+    align-items: center;
+    gap: 31px;
+
+    .icon {
+        width: 81px;
+        height: 81px;
+        background-color: var(--primary);
+        @include flex(center, center);
+
+        i {
+            color: var(--white);
+            font-size: 37px;
+            animation: ring 2s infinite;
+            transform-origin: top center;
+        }
+    }
+
+    .content {
+        width: calc(100% - 112px);
+
+        h4 {
+            color: var(--white);
+            margin-bottom: 7px;
+            letter-spacing: 0.9px;
+        }
+
+        p {
+            color: var(--color-text-3);
+            font-family: $font-main2;
+            padding-left: 2px;
+
+        }
+    }
+}
+
+.footer-content {
+    .title-mobile {
+        color: var(--white);
+        @include d-flex();
+        align-items: center;
+        justify-content: space-between;
+
+        i {
+            display: none;
+            @include transition3();
+        }
+    }
+
+    ul {
+        margin-top: 24px;
+    }
+
+    .support-item-footer {
+        padding-bottom: 10px;
+
+        a {
+            color: var(--color-text-2);
+            position: relative;
+            padding-left: 17px;
+            font-family: $font-main2;
+
+            &::before {
+                content: "\e97f";
+                position: absolute;
+                top: 50%;
+                left: -4px;
+                transform: translateY(-50%);
+                font-size: 16px;
+                font-family: $fontIcon;
+                @include transition3();
+                color: var(--primary);
+            }
+
+            &:hover {
+                color: var(--white);
+
+                &::before {
+                    left: 1%;
+                    color: var(--white);
+                }
+            }
+        }
+    }
+
+    &.open {
+        .title-mobile {
+            i {
+                transform: rotate(180deg);
+            }
+        }
+    }
+}
+
+.socials-footer {
+    flex-wrap: wrap;
+    row-gap: 15px;
+
+    .social-item {
+        .icon {
+            width: 61px;
+            height: 61px;
+
+            i {
+                font-size: 31px;
+            }
+        }
+    }
+}

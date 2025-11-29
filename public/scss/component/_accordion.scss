@@ -1,0 +1,265 @@
+.according-item {
+    border-top: 1px solid var(--line-4);
+    @include transition3();
+    width: 100%;
+
+    .title-according {
+        @include d-flex();
+        align-items: center;
+        gap: 16px;
+        color: var(--secondary);
+        padding: 22px 0;
+
+        i {
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        &:not(.collapsed) {
+            i {
+                transform: rotate(0);
+                @include transition3();
+            }
+        }
+
+        &.collapsed {
+            i {
+                transform: rotate(45deg);
+                @include transition3();
+            }
+        }
+    }
+
+    .according-content {
+        .text {
+            padding-bottom: 33px;
+            color: var(--color-text);
+            font-family: $font-main2;
+        }
+    }
+
+    &:last-child {
+        border-bottom: 1px solid var(--line-4);
+    }
+
+    &.active-border {
+        border-color: var(--secondary);
+    }
+
+    &.style-2 {
+        border: none;
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .title-according {
+            position: relative;
+            background-color: var(--secondary);
+            color: var(--white);
+            padding: 15px 31px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 0;
+                height: 100%;
+                background-image: url(../image/section/bg-title-according.png);
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                @include transition3();
+            }
+
+            span {
+                top: 8px;
+                right: 8px;
+                width: 45px;
+                height: 45px;
+                position: absolute;
+                background-color: var(--line-2);
+                @include transition3();
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 12px;
+                    height: 1.5px;
+                    background-color: var(--white);
+                    @include transition3();
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%) rotate(90deg);
+                    width: 12px;
+                    height: 1.5px;
+                    background-color: var(--white);
+                    @include transition3();
+                }
+            }
+
+            &:not(.collapsed) {
+                background-color: var(--primary);
+
+                &::before {
+                    width: 100%;
+                }
+
+                span {
+                    &::before {
+                        transform: translate(-50%, -50%) rotate(90deg);
+                        display: none;
+                    }
+
+                    &::after {
+                        transform: translate(-50%, -50%) rotate(180deg);
+                    }
+                }
+            }
+        }
+
+        .according-content {
+            border: 1px solid var(--line-4);
+            padding: 28px 30.5px 33px;
+            background-color: var(--white);
+
+            p {
+                padding-bottom: 0;
+            }
+        }
+        &.style-center{
+            .title-according {
+                @include flex(center,center);
+            }
+            .according-content {
+                padding: 28px 70px 33px;
+                p{
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    &.style-3 {
+        border-top: none;
+        border-bottom: 1px solid var(--line-4);
+
+        .title-according {
+            position: relative;
+            padding-left: 29px;
+            padding-top: 25px;
+            padding-bottom: 16px;
+            letter-spacing: 0.8px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                width: 8px;
+                height: 8px;
+                background-color: var(--primary);
+            }
+        }
+
+        .text {
+            padding-bottom: 24px;
+
+        }
+
+        .list-benefit {
+            padding-left: 4px;
+        }
+
+        &.active-border {
+            border-top-color: unset;
+        }
+        &:last-child{
+            border: none
+        }
+    }
+
+    &.according-price {
+        .title-according {
+            @include d-flex();
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0 15.5px;
+            span {
+                width: 21px;
+                height: 21px;
+                background-color: var(--primary);
+                border-radius: 50%;
+                position: relative;
+                display: block;
+
+                &::before {
+                    content: "+";
+                    position: absolute;
+                    top: 48%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: var(--white);
+                    font-size: 19px;
+                }
+            }
+
+            &:not(.collapsed) {
+                span {
+                    transform: rotate(0);
+                    @include transition3();
+                    &::before {
+                        content: "-";
+                    }
+                }
+            }
+
+            &.collapsed {
+                span {
+                    transform: rotate(180deg);
+                    @include transition3();
+                }
+            }
+        }
+        ul{
+            padding-top: 16px;
+            padding-bottom: 14px;
+            border-top: 1px solid var(--line-4);
+            margin-left: -6px;
+            li{
+                @include d-flex();
+                align-items: center;
+                gap: 5px;
+                margin-bottom: 4px;
+                i{
+                    color: var(--primary);
+                }
+                span{
+                    font-family: $font-main2;
+                }
+            }
+        }
+        &:first-child{
+            border-top: 0;
+        }
+        &:last-child{
+            border-bottom: 0;
+        }
+    }
+
+}
+
+.according-item.active-border+.according-item {
+    border-top-color: var(--secondary);
+}

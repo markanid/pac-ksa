@@ -1,0 +1,71 @@
+/*range-slider
+    ---------------------*/
+.range-slider {
+    .range-two-val {
+        height: 4px;
+        box-shadow: none;
+        border: 0;
+        background-color: var(--line-11);
+
+        .noUi-connects {
+            position: relative;
+            .noUi-connect {
+                background-color: var(--secondary);
+                height: 3px;
+            }
+        }
+
+        .noUi-origin {
+            .noUi-handle {
+                position: absolute;
+                cursor: pointer;
+                width: 8px;
+                height: 8px;
+                background-color: var(--primary);
+                box-shadow: none;
+                border: none;
+                top: -3px;
+                right: -7px;
+                border-radius: 0;
+                &::after,
+                &::before {
+                    display: none;
+                }
+
+                &:active {
+                    right: -7px !   important;
+                }
+            }
+        }
+    }
+
+    .bottom {
+        margin-top: 37px;
+        @include d-flex();
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .value {
+        @include d-flex();
+        align-items: center;
+        gap: 15px;
+        border: 1px solid var(--outline);
+        width: max-content;
+        .price-max,
+        .price-min {
+            border: 1px solid var(--Line);
+            padding: 6px 12px;
+            border-radius: 8px;
+            width: 100%;
+            position: relative;
+
+        }
+
+
+        >div {
+            color: var(--color-text-title-2);
+            font-weight: 600;
+        }
+    }
+}

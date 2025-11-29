@@ -1,0 +1,299 @@
+@keyframes ripple {
+    0% {
+        width: 100%;
+        height: 100%;
+        opacity: 0.9;
+    }
+
+    100% {
+        width: 150%;
+        height: 150%;
+        opacity: 0;
+    }
+}
+
+@keyframes ripple2 {
+    0% {
+        width: 0%;
+        height: 0%;
+        opacity: 0;
+    }
+
+    50% {
+        width: 200%;
+        height: 200%;
+        opacity: 0.5;
+    }
+
+    100% {
+        width: 0%;
+        height: 0%;
+        opacity: 0;
+    }
+}
+
+@keyframes glow {
+
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.tf-fade-top {
+    transform: translateY(20px);
+    opacity: 0;
+    visibility: hidden;
+    @include transition5;
+}
+
+.tf-fade-left {
+    transform: translateX(-20px);
+    opacity: 0;
+    visibility: hidden;
+    @include transition5;
+}
+
+.tf-fade-right {
+    transform: translateX(20px);
+    opacity: 0;
+    visibility: hidden;
+    @include transition5;
+}
+
+.tf-fade-bottom {
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    @include transition5;
+}
+
+
+.tf-fade-bottom-left {
+    transform: translate(20px, -20px);
+    opacity: 0;
+    visibility: hidden;
+    @include transition5;
+}
+
+.tf-fade-top-right {
+    transform: translate(-20px, -20px);
+    opacity: 0;
+    visibility: hidden;
+    @include transition5;
+}
+
+
+.tf-animate-1 {
+    clip-path: inset(0 100% 0 0);
+    @include transition-cubic-1();
+
+    &.active-animate {
+        clip-path: inset(-50px -50px -50px -50px);
+        animation-delay: 0.5s;
+    }
+
+    &.transition-1s {
+        @include transition-cubic-2();
+    }
+}
+
+.tf-animate-2 {
+    clip-path: inset(0 0 100% 0);
+    @include transition-cubic-1();
+
+    &.active-animate {
+        clip-path: inset(-50px -50px -50px -50px);
+        animation-delay: 0.7s;
+    }
+}
+
+.tf-animate-3 {
+    clip-path: inset(100% 0 0 0);
+    @include transition-cubic-1();
+
+    &.active-animate {
+        clip-path: inset(-50px -50px -50px -50px);
+        animation-delay: 0.5s;
+    }
+}
+
+.tf-animate-4 {
+    clip-path: inset(0 0 0 100%);
+    @include transition-cubic-1();
+
+    &.active-animate {
+        clip-path: inset(-50px -50px -50px -50px);
+        animation-delay: 0.5s;
+    }
+}
+
+@keyframes ring {
+    0% {
+        transform: rotate(0) scale(1) skew(1deg);
+    }
+
+    10% {
+        transform: rotate(-15deg) scale(1) skew(1deg);
+    }
+
+    20% {
+        transform: rotate(30deg) scale(1) skew(1deg);
+    }
+
+    30% {
+        transform: rotate(-15deg) scale(1) skew(1deg);
+    }
+
+    40% {
+        transform: rotate(30deg) scale(1) skew(1deg);
+    }
+
+    100%,
+    50% {
+        transform: rotate(0) scale(1) skew(1deg);
+    }
+}
+
+@keyframes l3 {
+    to {
+        transform: rotate(-1turn)
+    }
+}
+
+@keyframes infiniteScroll {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes tf-preload {
+    0% {
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(1);
+        background: transparent;
+    }
+
+    100% {
+        transform: scale(0.8);
+        background: transparent;
+    }
+}
+
+
+.hover-img {
+    .image {
+        overflow: hidden;
+
+        display: block;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            -webkit-transition:
+                opacity 0.5s ease,
+                transform 2s cubic-bezier(0, 0, 0.44, 1.18);
+            transition:
+                opacity 0.5s ease,
+                transform 2s cubic-bezier(0, 0, 0.44, 1.18);
+        }
+    }
+
+    &:hover {
+        .image {
+            img {
+                -webkit-transform: scale(1.06);
+                transform: scale(1.06);
+            }
+        }
+    }
+}
+
+.slide-in-left {
+    opacity: 0;
+    clip-path: inset(0 0 0 100%);
+    animation: slideInFabric-left 1.5s ease-out forwards;
+}
+
+@keyframes slideInFabric-left {
+    0% {
+        opacity: 0;
+        clip-path: inset(0 0 0 100%);
+    }
+
+    100% {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.slide-in-right {
+    opacity: 0;
+    visibility: hidden;
+    clip-path: inset(0 100% 0 0);
+    animation: slideInFabric_right 1.5s ease-out forwards;
+}
+
+@keyframes slideInFabric_right {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        clip-path: inset(0 100% 0 0);
+    }
+
+    100% {
+        opacity: 1;
+        visibility: visible;
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes dotAnimatedTopToBottom {
+    0% {
+        top: 0;
+    }
+
+    50% {
+        top: 100%;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes dotAnimatedBottomToTop {
+    0% {
+        bottom: 0;
+    }
+
+    50% {
+        bottom: 100%;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+.text-anime-wave {
+    display: block;
+}
+
+
+.line-animation {
+    transform-origin: center;
+    transform: scaleX(0.8);
+}
