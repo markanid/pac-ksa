@@ -14,13 +14,12 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('name',100);
-            $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
-            $table->date('date');
-            $table->string('country',50);
-            $table->string('industry',50);
-            $table->string('website',50);
+            $table->string('name_ar',100);
             $table->text('keyword');
-            $table->string('image',50);
+            $table->string('desktop_image',50);
+            $table->string('image_alt_tag', 50);
+            $table->string('meta_title',100);
+            $table->text('meta_description');
             $table->string('slug')->unique();
             $table->timestamps();
         });

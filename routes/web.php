@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\{AboutController, BlogController, CategoryController, ClientController, ContactController, FeatureController, LoginController, MetaDataController, ProjectController, ServiceController, TeamController, TestimonialController,SlidersController};
+use App\Http\Controllers\Admin\{AboutController, ClientController, ContactController, LoginController, MetaDataController, ProjectController, ServiceController, SlidersController};
 use App\Http\Controllers\UserPageController;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
@@ -47,9 +47,7 @@ Route::group(["prefix"=> "admin"], function () {
             'meta_data'     => MetaDataController::class,
             'about'         => AboutController::class,
             'services'      => ServiceController::class,
-            'categories'    => CategoryController::class,
             'projects'      => ProjectController::class,
-            'features'      => FeatureController::class,
             'clients'       => ClientController::class,
             'contact'       => ContactController::class,
             'sliders'       => SlidersController::class,

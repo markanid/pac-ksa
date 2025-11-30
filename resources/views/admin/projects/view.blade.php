@@ -36,8 +36,9 @@
                 <tbody>
                     <tr>
                         <td style="background-color:#096ca5; color:#fff;">Portfolio-Name</td>
-                        <td><b style="color:#096ca5;">{{ $project->name }}</b>
-                        </td>
+                        <td><b style="color:#096ca5;">{{ $project->name }}</b></td>
+                        <td dir="rtl"><b style="color:#096ca5;">{{ $project->name_ar }}</b></td>
+                        <td style="background-color:#096ca5; color:#fff;">Portfolio-Name</td>
                     </tr>
                 </tbody>
             </table>
@@ -56,47 +57,13 @@
                                 @endif
                             </div>
                         </td>
-                        <td rowspan="2">
-                            <span>Mobile Image :</span>
-                            <div>
-                                @if(!empty($project) && !empty($project->mobile_image))
-                                    <img src="{{ asset('storage/projects/mobile/' . $project->mobile_image) }}" alt="{{ $project->image_alt_tag }}" class="img-fluid rounded" style="max-height: 200px;">
-                                @else
-                                    <img src="{{ asset('uploads/employees/avatar.png') }}" alt="Portfolio Photo" class="img-fluid rounded" style="max-height: 200px;">
-                                @endif
-                            </div>
-                        </td>
                         <td>
-                            <span>Category :</span>
-                            <label>{{ $project->category->name ?? '' }}</label>
-                        </td>
-                        <td>
-                            <span>Published-Date :</span>
-                            <label>{{ \Carbon\Carbon::parse($project->date)->format('d/m/Y') ?? '' }}</label>
-                        </td>
-                        <td>
-                            <span>Country :</span>
-                            <label>{{ $project->country ?? '' }}</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <span>Industry :</span>
-                            <label>{{ $project->industry ?? '' }}</label>
-                        </td>
-                        <td>
-                            <span>Website :</span>
-                            <label>{{ $project->website ?? '' }}</label>
+                            <span>Image Alt-Tag :</span>
+                            <label>{{ $project->image_alt_tag ?? '' }}</label>
                         </td>
                         <td>
                             <span>Keyword :</span>
                             <label>{{ $project->keyword ?? '' }}</label>
-                        </td>
-                    </tr>
-                     <tr>
-                        <td>
-                            <span>Image Alt-Tag :</span>
-                            <label>{{ $project->image_alt_tag ?? '' }}</label>
                         </td>
                         <td>
                             <span>Meta Title :</span>
@@ -115,30 +82,6 @@
 @endsection
 
 @section('scripts')
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.querySelectorAll('.delete-btn').forEach(button => {
-            button.addEventListener('click', function(event) {
-                event.preventDefault();
-                let deleteUrl = this.getAttribute('data-url');
-    
-                Swal.fire({
-                    title: "Are you sure?",
-                    text: "This action cannot be undone!",
-                    icon: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#d33",
-                    cancelButtonColor: "#3085d6",
-                    confirmButtonText: "Yes, delete it!"
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        window.location.href = deleteUrl;
-                    }
-                });
-            });
-        });
-    });
-</script>
 <script>
     $(document).ready(function(){
         var Toast = Swal.mixin({

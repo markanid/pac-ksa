@@ -35,10 +35,8 @@
                         <thead>
                             <tr>
                                 <th>SL No.</th>
-                                <th>Portfolio-Name</th>
-                                <th>Category</th>
+                                <th>Project-Name</th>
                                 <th>Image</th>
-                                <th>Featured</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -48,14 +46,10 @@
                                 <tr>
                                     <td>{{$i++;}}</td>
                                     <td><a href={{ route('projects.show', $row->slug) }}>{{ $row->name }}</a></td>
-                                    <td>{{ $row->category->name }}</td>
                                     <td> 
                                         <img src="{{ $row->desktop_image ? asset('storage/projects/' . $row->desktop_image) : asset('uploads/avatar.png') }}" width="100" height="70" alt="{{ $row->image_alt_tag }}">
                                    </td>
                                    <td>
-                                        <input type="checkbox" class="featured-checkbox" data-id="{{ $row->id }}"{{ $row->featured ? 'checked' : '' }}>
-                                    </td>
-                                    <td>
                                         <a class="btn btn-info btn-sm btn-flat" href="{{route('projects.edit', $row->id)}}"><i class="fas fa-pencil-alt"></i></a>
                                         <a href="#" class="btn btn-danger btn-sm btn-flat delete-btn" data-url="{{ route('projects.delete', ['id' => $row->id]) }}"><i class="fas fa-trash"></i></a>
                                     </td>
@@ -144,32 +138,6 @@
                 title: '{{ session('info') }}'
             });
         @endif
-
-        // AJAX: Update featured status
-        $('.featured-checkbox').change(function () {
-            var checkbox = $(this);
-            var id = checkbox.data('id');
-            var featured = checkbox.is(':checked') ? 1 : 0;
-
-            $.post("{{ route('projects.updateFeatured') }}", {
-                id: id,
-                featured: featured,
-                _token: '{{ csrf_token() }}'
-            }, function (data) {
-                Toast.fire({
-                    icon: 'success',
-                    title: featured ? 'Featured added' : 'Featured removed'
-                });
-            }).fail(function () {
-                // Revert checkbox state on failure
-                checkbox.prop('checked', !checkbox.is(':checked'));
-
-                Toast.fire({
-                    icon: 'error',
-                    title: 'Something went wrong!'
-                });
-            });
-        });
     });
 </script>
 @endsection

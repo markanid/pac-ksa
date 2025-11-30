@@ -80,18 +80,15 @@ class UserPageController extends Controller
     public function projects() {
         return view("users.projects",[
             'projects'      => Project::oldest('created_at')->get(),
-            'categories'    => Category::oldest('created_at')->get(),
         ]);
     }
 
     public function projects_ar() {
         return view("users_ar.projects",[
             'projects'       => Project::oldest('created_at')->get(),
-            'categories'    => Category::oldest('created_at')->get(),
         ]);
     }
 
-    
      public function sendEmail(Request $request)
     {
         $validator = Validator::make($request->all(), [

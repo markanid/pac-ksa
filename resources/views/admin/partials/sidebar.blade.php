@@ -53,13 +53,6 @@ $current_route = request()->route()->getName();
          </li>
 
          <li class="nav-item">
-           <a href="{{route('features.index')}}" class="nav-link {{ menuActive(['features.index', 'features.create', 'features.edit', 'features.show'], 'active') }}">
-           <i class="nav-icon fas fa-feather-alt"></i>
-             <p>Features</p>
-           </a>
-         </li>
-
-         <li class="nav-item">
            <a href="{{route('services.index')}}" class="nav-link {{ menuActive(['services.index', 'services.create', 'services.edit', 'services.show'], 'active') }}">
            <i class="nav-icon fab fa-servicestack"></i>
              <p>Services</p>
@@ -69,14 +62,7 @@ $current_route = request()->route()->getName();
          <li class="nav-item">
            <a href="{{route('sliders.index')}}" class="nav-link {{ menuActive(['sliders.index', 'sliders.create', 'sliders.edit', 'sliders.show'], 'active') }}">
            <i class="nav-icon fab fa-servicestack"></i>
-             <p>sliders</p>
-           </a>
-         </li>
-
-         <li class="nav-item">
-           <a href="{{route('categories.index')}}" class="nav-link {{ menuActive(['categories.index', 'categories.create', 'categories.edit', 'categories.show'], 'active') }}">
-           <i class="nav-icon fas fa-list"></i>
-             <p>Category</p>
+             <p>Sliders</p>
            </a>
          </li>
 
