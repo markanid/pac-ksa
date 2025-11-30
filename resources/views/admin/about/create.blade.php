@@ -50,19 +50,19 @@
                </div>
                <div class="col-md-12">
                    <div class="form-group">
-                       <label>Health & Safty Policy<sup>*</sup></label>
-                       <textarea name="glimbse" id="glimbse" tabindex="3" class="form-control">{{ !empty($about->glimbse) ? $about->glimbse : '' }}</textarea>
-                       @if ($errors->has('glimbse'))
-                         <span class="text-danger">{{ $errors->first('glimbse') }}</span>
+                       <label>Health & Safety Policy<sup>*</sup></label>
+                       <textarea name="hspolicy" id="hspolicy" tabindex="3" class="form-control">{{ !empty($about->hspolicy) ? $about->hspolicy : '' }}</textarea>
+                       @if ($errors->has('hspolicy'))
+                         <span class="text-danger">{{ $errors->first('hspolicy') }}</span>
                        @endif
                    </div>
                </div>
                <div class="col-md-12">
                    <div class="form-group">
-                       <label>Health & Safty Policy - Arabic<sup>*</sup></label>
-                       <textarea name="glimbse_ar" id="glimbse_ar" tabindex="4" class="form-control" style="direction: rtl; text-align: right;">{{ !empty($about->glimbse_ar) ? $about->glimbse_ar : '' }}</textarea>
-                       @if ($errors->has('glimbse_ar'))
-                         <span class="text-danger">{{ $errors->first('glimbse_ar') }}</span>
+                       <label>Health & Safety Policy - Arabic<sup>*</sup></label>
+                       <textarea name="hspolicy_ar" id="hspolicy_ar" tabindex="4" class="form-control" style="direction: rtl; text-align: right;">{{ !empty($about->hspolicy_ar) ? $about->hspolicy_ar : '' }}</textarea>
+                       @if ($errors->has('hspolicy_ar'))
+                         <span class="text-danger">{{ $errors->first('hspolicy_ar') }}</span>
                        @endif
                    </div>
                </div>
@@ -105,27 +105,27 @@
                <div class="col-md-12">
                    <div class="form-group">
                        <label>Our Commitment & Collaboration<sup>*</sup></label>
-                       <textarea name="mission" id="mission" tabindex="9" class="form-control">{{ !empty($about->mission) ? $about->mission : '' }}</textarea>
-                       @if ($errors->has('mission'))
-                         <span class="text-danger">{{ $errors->first('mission') }}</span>
+                       <textarea name="commitment" id="commitment" tabindex="9" class="form-control">{{ !empty($about->commitment) ? $about->commitment : '' }}</textarea>
+                       @if ($errors->has('commitment'))
+                         <span class="text-danger">{{ $errors->first('commitment') }}</span>
                        @endif
                    </div>
                </div>
                <div class="col-md-12">
                    <div class="form-group">
                        <label>Our Commitment & Collaboration - Arabic<sup>*</sup></label>
-                       <textarea name="mission_ar" id="mission_ar" tabindex="10" class="form-control" style="direction: rtl; text-align: right;">{{ !empty($about->mission_ar) ? $about->mission_ar : '' }}</textarea>
-                       @if ($errors->has('mission_ar'))
-                         <span class="text-danger">{{ $errors->first('mission_ar') }}</span>
+                       <textarea name="commitment_ar" id="commitment_ar" tabindex="10" class="form-control" style="direction: rtl; text-align: right;">{{ !empty($about->commitment_ar) ? $about->commitment_ar : '' }}</textarea>
+                       @if ($errors->has('commitment_ar'))
+                         <span class="text-danger">{{ $errors->first('commitment_ar') }}</span>
                        @endif
                    </div>
                </div>
                <div class="col-md-12">
                    <div class="form-group">
                        <label>Why Choose Us<sup>*</sup></label>
-                       <textarea name="whychoose" id="whychoose" tabindex="11" class="form-control">{{ !empty($about->whychoose) ? $about->whychoose : '' }}</textarea>
-                       @if ($errors->has('whychoose'))
-                         <span class="text-danger">{{ $errors->first('whychoose') }}</span>
+                       <textarea name="whychooseus" id="whychooseus" tabindex="11" class="form-control">{{ !empty($about->whychooseus) ? $about->whychooseus : '' }}</textarea>
+                       @if ($errors->has('whychooseus'))
+                         <span class="text-danger">{{ $errors->first('whychooseus') }}</span>
                        @endif
                    </div>
                </div>

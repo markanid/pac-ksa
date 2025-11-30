@@ -39,6 +39,15 @@
                         @endif
                     </div>
                 </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Name [Arabic]</label>
+                        <input type="text" name="name_ar" tabindex="2" class="form-control" value="{{ !empty($service->name_ar) ? $service->name_ar : '' }}" style="direction: rtl; text-align: right;">
+                        @if ($errors->has('name_ar'))
+                          <span class="text-danger">{{ $errors->first('name_ar') }}</span>
+                        @endif
+                    </div>
+                </div>
 
                  <div class="col-md-12">
                     <div class="form-group">
@@ -49,11 +58,28 @@
                         @endif
                     </div>
                 </div>
+
+                 <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Details [Arabic]</label>
+                        <textarea style="height: 100px;" name="details_ar" id="details_ar" tabindex="4" class="form-control">{!! old('details_ar', $service->details_ar ?? '') !!}</textarea>
+                        @if ($errors->has('details_ar'))
+                          <span class="text-danger">{{ $errors->first('details_ar') }}</span>
+                        @endif
+                    </div>
+                </div>
+
+                 <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Meta Title</label>
+                        <textarea style="height: 100px;" name="meta_title" tabindex="5" class="form-control">{{ !empty($service->meta_title) ? $service->meta_title : '' }}</textarea>
+                    </div>
+                </div>
                 
                 <div class="col-md-12">
                     <div class="form-group">
                         <label>Meta Description</label>
-                        <textarea style="height: 100px;" name="description" id="description" tabindex="2" class="form-control">{{ !empty($service->description) ? $service->description : '' }}</textarea>
+                        <textarea style="height: 100px;" name="description" id="description" tabindex="6" class="form-control">{{ !empty($service->description) ? $service->description : '' }}</textarea>
                         @if ($errors->has('description'))
                           <span class="text-danger">{{ $errors->first('description') }}</span>
                         @endif
@@ -62,15 +88,8 @@
 
                  <div class="col-md-12">
                     <div class="form-group">
-                        <label>Meta Title</label>
-                        <textarea style="height: 100px;" name="meta_title" tabindex="3" class="form-control">{{ !empty($service->meta_title) ? $service->meta_title : '' }}</textarea>
-                    </div>
-                </div>
-
-                 <div class="col-md-12">
-                    <div class="form-group">
                         <label>Keywords</label>
-                        <textarea style="height: 100px;" name="keyword" tabindex="3" class="form-control">{{ !empty($service->keyword) ? $service->keyword : '' }}</textarea>
+                        <textarea style="height: 100px;" name="keyword" tabindex="7" class="form-control">{{ !empty($service->keyword) ? $service->keyword : '' }}</textarea>
                     </div>
                 </div>
                 
@@ -79,7 +98,7 @@
                         <label for="customFile">Image</label>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile2" tabindex="4" name="image">
+                                <input type="file" class="custom-file-input" id="customFile2" tabindex="8" name="image">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
                             @if ($errors->has('image'))
@@ -99,7 +118,7 @@
                  <div class="col-md-8">
                     <div class="form-group">
                         <label>Image Alt-Tag</label>
-                        <input type="text" name="image_alt_tag" tabindex="5" class="form-control" value="{{ !empty($service->image_alt_tag) ? $service->image_alt_tag : '' }}">
+                        <input type="text" name="image_alt_tag" tabindex="9" class="form-control" value="{{ !empty($service->image_alt_tag) ? $service->image_alt_tag : '' }}">
                         @if ($errors->has('image_alt_tag'))
                           <span class="text-danger">{{ $errors->first('image_alt_tag') }}</span>
                         @endif
@@ -109,7 +128,7 @@
             </div>
         </div>
         <div class="card-footer" align="center">
-            <button type="submit" id="submitBtn" tabindex="6" class="btn btn-primary  btn-flat"><i class="fas fa-save"></i> Save</button>
+            <button type="submit" id="submitBtn" tabindex="10" class="btn btn-primary  btn-flat"><i class="fas fa-save"></i> Save</button>
             <button type="reset" value="Reset" id="resetbtn" tabindex="p" class="btn btn-secondary  btn-flat"><i class="fas fa-undo-alt"></i> Reset</button>
             
         </div>
@@ -118,6 +137,14 @@
 @endsection
 
 @section('scripts')
+<style>
+    /* Only apply Arabic font to this specific Summernote editor */
+    #details_ar + .note-editor .note-editable {
+        font-family: 'Tajawal', sans-serif !important;
+        direction: rtl !important;
+        text-align: right !important;
+    }
+</style>
 <script>
 $(function () {
     bsCustomFileInput.init();
@@ -145,27 +172,14 @@ $(function () {
             form.submit();
         }
     });
-
-    $('#bannerForm').validate({
-        rules: {},
-        messages: {},
-        errorElement: 'span',
-        errorPlacement: function (error, element) {
-            error.addClass('invalid-feedback');
-            element.closest('.form-group').append(error);
-        },
-        highlight: function (element) {
-            $(element).addClass('is-invalid');
-        },
-        unhighlight: function (element) {
-            $(element).removeClass('is-invalid');
-        }
-    });
 });
 
 // Summernote
     $('#details').summernote({
         height: 170 // Set height in pixels (adjust as needed)
+    });
+    $('#details_ar').summernote({
+        height: 170
     });
     
 </script>

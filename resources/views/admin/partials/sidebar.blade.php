@@ -86,27 +86,6 @@ $current_route = request()->route()->getName();
              <p>Projects</p>
            </a>
          </li>
-
-         <li class="nav-item">
-           <a href="{{route('testimonials.index')}}" class="nav-link {{ menuActive(['testimonials.index', 'testimonials.create', 'testimonials.edit', 'testimonials.show'], 'active') }}">
-           <i class="nav-icon fas fa-user-shield"></i>
-             <p>Testimonial</p>
-           </a>
-         </li>
-
-         <li class="nav-item">
-           <a href="{{route('blogs.index')}}" class="nav-link {{ menuActive(['blogs.index', 'blogs.create', 'blogs.edit', 'blogs.show'], 'active') }}">
-           <i class="nav-icon far fa-newspaper"></i>
-             <p>Blogs</p>
-           </a>
-         </li>
-         
-          <li class="nav-item">
-            <a href="{{route('teams.index')}}" class="nav-link {{ menuActive(['teams.index', 'teams.create', 'teams.edit', 'teams.show'], 'active') }}">
-              <i class="nav-icon fas fa-users"></i>
-              <p>Team</p>
-            </a>
-          </li>
          
           <li class="nav-item">
             <a href="{{route('clients.index')}}" class="nav-link {{ menuActive(['clients.index', 'clients.create', 'clients.edit', 'clients.show'], 'active') }}">

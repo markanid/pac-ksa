@@ -14,10 +14,17 @@ return new class extends Migration
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
             $table->text('welcome')->nullable();
-            $table->text('glimbse')->nullable();
             $table->text('our_journey')->nullable();
+            $table->text('hspolicy')->nullable();
             $table->text('vision')->nullable();
-            $table->text('mission')->nullable();
+            $table->text('commitment')->nullable();
+            $table->text('whychooseus')->nullable();
+            $table->text('welcome_ar')->nullable();
+            $table->text('our_journey_ar')->nullable();
+            $table->text('hspolicy_ar')->nullable();
+            $table->text('vision_ar')->nullable();
+            $table->text('commitment_ar')->nullable();
+            $table->text('whychooseus_ar')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();
         });

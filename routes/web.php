@@ -11,7 +11,6 @@ Route::get('/aboutus',[UserPageController::class,'about'])->name('users.aboutus'
 Route::get('/services',[UserPageController::class,'service'])->name('users.services'); 
 Route::get("/servicedetails/{slug}", [UserPageController::class, 'servicedetails'])->where('slug', '[A-Za-z0-9\-]+')->name('users.servicedetails');
 Route::get("/projects", [UserPageController::class, 'projects'])->name('users.projects');
-
 Route::get('contactus',[UserPageController::class,'contact'])->name('users.contactus'); 
 Route::post('/send-email', [UserPageController::class, 'sendEmail'])->name('send.email');
 
@@ -43,9 +42,6 @@ Route::group(["prefix"=> "admin"], function () {
         Route::get('/change-password', [LoginController::class, 'showChangePasswordForm'])->name('changePasswordForm');
         Route::post('/change-password', [LoginController::class, 'changePassword'])->name('changePassword');
         Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-        Route::post('/admin/services/featured', [ServiceController::class, 'updateFeatured'])->name('services.updateFeatured');
-        Route::post('/admin/projects/featured', [ProjectController::class, 'updateFeatured'])->name('projects.updateFeatured');
-
         // Resourceful routes for Admin sections
         $resources = [
             'meta_data'     => MetaDataController::class,
@@ -54,9 +50,6 @@ Route::group(["prefix"=> "admin"], function () {
             'categories'    => CategoryController::class,
             'projects'      => ProjectController::class,
             'features'      => FeatureController::class,
-            'teams'         => TeamController::class,
-            'testimonials'  => TestimonialController::class,
-            'blogs'         => BlogController::class,
             'clients'       => ClientController::class,
             'contact'       => ContactController::class,
             'sliders'       => SlidersController::class,

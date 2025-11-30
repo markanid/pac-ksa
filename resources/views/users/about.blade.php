@@ -19,12 +19,6 @@
   </div>
 </section>
 
-<!--=================================
-page-title -->
-
-
-<!--=================================
- About-->
 
 <section class="page-section-ptb">
   <div class="container">
@@ -42,7 +36,6 @@ page-title -->
         <div class="section-title">
             <h6> {{ $about['welcome'] }}</h6>
             <h2 class="title-effect">Get to know us better.</h2>
-           <!--  <p>We truly care about our users and our product. We are dedicated to providing you with the best experience possible. </p> -->
           </div>
           <p> {!! str_replace('</p>', '', $about['our_journey']) !!}  </p>
          
@@ -51,13 +44,6 @@ page-title -->
        
   </div>
 </section>
-
-<!--=================================
- About-->
-
-
-<!--=================================
-Our office  -->
 
 
 <section class="theme-bg page-section-ptb">
@@ -81,11 +67,6 @@ Our office  -->
       </div>
   </div>
 </section>
-<!--=================================
- Our office -->
-
- <!--=================================
- Our activities -->
 
 <section class="our-activities gray-bg page-section-ptb">
   <div class="container">
@@ -94,7 +75,7 @@ Our office  -->
          <div class="section-title">
             <h6>Let's have a look at</h6>
             <h2 class="title-effect">Why choose us</h2>
-            <p>{!! str_replace('</p>', '', $about['whychoose']) !!}</p>
+            <p>{!! str_replace('</p>', '', $about['whychooseus']) !!}</p>
           </div>
         
         </div>
@@ -106,23 +87,15 @@ Our office  -->
               </div>
               <div class="acd-group">
                   <a href="#" class="acd-heading">02. Our Commitment & Collaboration</a>
-                  <div class="acd-des"> {!! str_replace('</p>', '', $about['mission']) !!}</div>
+                  <div class="acd-des"> {!! str_replace('</p>', '', $about['commitment']) !!}</div>
               </div> 
                <div class="acd-group">
                   <a href="#" class="acd-heading">03. Health & Safety Policy</a>
-                  <div class="acd-des"> {!! str_replace('</p>', '', $about['glimbse']) !!}</div>
+                  <div class="acd-des"> {!! str_replace('</p>', '', $about['hspolicy']) !!}</div>
               </div> 
           </div>
       </div>
     </div>
  </div>
 </section>
-
-<!--=================================
-our activities -->
-
-
-
-
-
 </x-userlayout>

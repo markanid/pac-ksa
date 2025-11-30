@@ -36,8 +36,9 @@
                 <tbody>
                     <tr>
                         <td style="background-color:#096ca5; color:#fff;">Service Name</td>
-                        <td><b style="color:#096ca5;">{{ $service->name }}</b>
-                        </td>
+                        <td><b style="color:#096ca5;">{{ $service->name }}</b></td>
+                        <td style="background-color:#096ca5; color:#fff;">Service Name [Arabic]</td>
+                        <td><b style="color:#096ca5;">{{ $service->name_ar }}</b></td>
                     </tr>
                 </tbody>
             </table>
@@ -55,12 +56,26 @@
                                 @endif 
                             </div>
                         </td>
+                        <td colspan="2">
+                            <span>Details :</span>
+                            <label>{!! $service->details !!}</label>
+                        </td>
+                        <td colspan="2">
+                            <span>Details [Arabic] :</span>
+                            <label>{!! $service->details_ar !!}</label>
+                        </td>
+                    </tr>
+                    <tr>
                         <td>
-                            <span>Description :</span>
+                            <span>Meta Title :</span>
+                            <label>{{ $service->meta_title }}</label>
+                        </td>
+                        <td>
+                            <span>Meta Description :</span>
                             <label>{{ $service->description }}</label>
                         </td>
                         <td>
-                            <span>Keyword :</span>
+                            <span>Keywords :</span>
                             <label>{{ $service->keyword }}</label>
                         </td>
                         <td>

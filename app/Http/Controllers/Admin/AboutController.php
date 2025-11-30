@@ -37,17 +37,17 @@ class AboutController extends Controller
     {
         $validated = $request->validate([
             'welcome'           => 'required|string|max:1000',
-            'welcome_ar'       => 'required|string|max:1000',
-            'glimbse'           => 'required|string|max:1000',
-            'glimbse_ar'       => 'required|string|max:1000',
+            'welcome_ar'        => 'required|string|max:1000',
+            'hspolicy'          => 'required|string|max:1000',
+            'hspolicy_ar'       => 'required|string|max:1000',
             'our_journey'       => 'required|string|max:2000',
             'our_journey_ar'    => 'required|string|max:2000',
             'vision'            => 'required|string|max:1000',
             'vision_ar'         => 'required|string|max:1000',
-            'mission'           => 'required|string|max:1000',
-            'mission_ar'        => 'required|string|max:1000',
-            'whychoose'         => 'required|string|max:2000',
-            'whychooseus_ar'      => 'required|string|max:2000',
+            'commitment'        => 'required|string|max:1000',
+            'commitment_ar'     => 'required|string|max:1000',
+            'whychooseus'       => 'required|string|max:2000',
+            'whychooseus_ar'    => 'required|string|max:2000',
             'image'             => 'image|mimes:jpeg,png,jpg,gif,svg,webp,avif|max:10240'
         ]);
 

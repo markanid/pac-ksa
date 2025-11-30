@@ -69,11 +69,11 @@
                         <tr>
                             <td>
                                 <label>Health & Safety Policy :</label>
-                                <span>{{ $about->glimbse ?? '' }}</span>
+                                <span>{{ $about->hspolicy ?? '' }}</span>
                             </td>
                             <td>
                                <label>Health & Safety Policy (Arabic) :</label>
-                                <span dir="rtl">{{ $about->glimbse_ar ?? '' }}</span>
+                                <span dir="rtl">{{ $about->hspolicy_ar ?? '' }}</span>
                             </td>
                             <td>
                                 <label>Vision :</label>
@@ -87,17 +87,17 @@
                             </td>
                             <td>
                                 <label>Our Commitment & Collaboration :</label>
-                                <span>{{ $about->mission ?? '' }}</span>
+                                <span>{{ $about->commitment ?? '' }}</span>
                             </td>
                             <td>
                                 <label>Our Commitment & Collaboration (Arabic) :</label>
-                                <span dir="rtl">{{ $about->mission_ar ?? '' }}</span>
+                                <span dir="rtl">{{ $about->commitment_ar ?? '' }}</span>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <label>Why Choose Us :</label>
-                                <span>{!! $about->whychoose ?? '' !!}</span>
+                                <span>{!! $about->whychooseus ?? '' !!}</span>
                             </td>
                             <td>
                                 <label>Why Choose Us (Arabic) :</label>

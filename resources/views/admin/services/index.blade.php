@@ -36,7 +36,6 @@
                                 <th>SL No.</th>
                                 <th>Name</th>
                                 <th>Image</th>
-                                 <th>featured</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -49,10 +48,6 @@
                                     <td> 
                                          <img src="{{ $row->image ? asset('storage/services/' . $row->image) : asset('uploads/avatar.png') }}" width="100" height="70" alt="{{ $row->image_alt_tag }}">
                                     </td>
-                                    <td>
-                                        <input type="checkbox" class="featured-checkbox" data-id="{{ $row->id }}"{{ $row->featured ? 'checked' : '' }}>
-                                    </td>
-
                                     <td>
                                         <a class="btn btn-info btn-sm btn-flat" href="{{route('services.edit', $row->id)}}"><i class="fas fa-pencil-alt"></i></a>
                                         <a href="#" class="btn btn-danger btn-sm btn-flat delete-btn" data-url="{{ route('services.delete', ['id' => $row->id]) }}"><i class="fas fa-trash"></i></a>

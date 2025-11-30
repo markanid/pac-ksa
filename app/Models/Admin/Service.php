@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
 {
-    protected $fillable = ['name','description','image', 'image_alt_tag', 'keyword', 'slug','details','meta_title'];
+    protected $fillable = ['name', 'details', 'name_ar', 'details_ar', 'meta_title', 'description', 'image', 'image_alt_tag', 'keyword', 'slug'];
     use HasFactory;
 }

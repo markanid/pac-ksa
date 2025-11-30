@@ -639,26 +639,28 @@ namespace App\Models\Admin {
      *
      * @property \Illuminate\Support\Carbon|null $updated_at
      * @property \Illuminate\Support\Carbon|null $created_at
-     * @property mixed $featured
      * @property string $slug
      * @property string|null $keyword
      * @property string|null $image_alt_tag
      * @property string|null $image
      * @property string|null $description
      * @property string|null $meta_title
+     * @property string $details_ar
+     * @property string $name_ar
      * @property string|null $details
      * @property string|null $name
      * @property int $id
      * @method static \Illuminate\Database\Eloquent\Builder<Service>|Service whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Service>|Service whereName($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Service>|Service whereDetails($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Service>|Service whereNameAr($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<Service>|Service whereDetailsAr($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Service>|Service whereMetaTitle($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Service>|Service whereDescription($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Service>|Service whereImage($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Service>|Service whereImageAltTag($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Service>|Service whereKeyword($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Service>|Service whereSlug($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<Service>|Service whereFeatured($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Service>|Service whereCreatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Service>|Service whereUpdatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<Service>|Service newModelQuery()
@@ -962,20 +964,32 @@ namespace App\Models\Admin {
      * @property \Illuminate\Support\Carbon|null $updated_at
      * @property \Illuminate\Support\Carbon|null $created_at
      * @property string|null $image
-     * @property string|null $whychoose
-     * @property string|null $mission
+     * @property string $whychooseus_ar
+     * @property string $commitment_ar
+     * @property string $vision_ar
+     * @property string $hspolicy_ar
+     * @property string $our_journey_ar
+     * @property string $welcome_ar
+     * @property string|null $whychooseus
+     * @property string|null $commitment
      * @property string|null $vision
      * @property string|null $our_journey
-     * @property string|null $glimbse
+     * @property string|null $hspolicy
      * @property string|null $welcome
      * @property int $id
      * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereWelcome($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereGlimbse($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereHspolicy($value)
      * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereOurJourney($value)
      * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereVision($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereMission($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereWhychoose($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereCommitment($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereWhychooseus($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereWelcomeAr($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereOurJourneyAr($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereHspolicyAr($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereVisionAr($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereCommitmentAr($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereWhychooseusAr($value)
      * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereImage($value)
      * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereCreatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<About>|About whereUpdatedAt($value)

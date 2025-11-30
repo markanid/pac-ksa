@@ -36,8 +36,9 @@
                 <tbody>
                     <tr>
                         <td style="background-color:#096ca5; color:#fff;">Name</td>
-                        <td><b style="color:#096ca5;">{{ $client->name }}</b>
-                        </td>
+                        <td><b style="color:#096ca5;">{{ $client->name }}</b></td>
+                        <td dir="rtl"><b style="color:#096ca5;">{{ $client->name_ar }}</b></td>
+                        <td style="background-color:#096ca5; color:#fff;">Name [Arabic]</td>
                     </tr>
                 </tbody>
             </table>

@@ -17,13 +17,6 @@
   </div>
 </section>
 
-<!--=================================
-page-title -->
-
-
-<!--=================================
- Premium Features -->
-
 <section class="our-clients theme-bg text-white page-section-ptb position-relative">
   <div class="container">
     <div class="row">
@@ -33,9 +26,6 @@ page-title -->
     </div>
   </div>
 </section>
-
-<!--=================================
- service -->
 
 <section class="secrvice-blog pb-80">
   <div class="container">

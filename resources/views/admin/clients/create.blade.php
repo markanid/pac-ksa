@@ -40,6 +40,16 @@
                         @endif
                     </div>
                 </div>
+                
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>Name [Arabic]</label>
+                        <input type="text" name="name_ar" tabindex="2" class="form-control" value="{{ !empty($client->name_ar) ? $client->name_ar : '' }}" style="direction: rtl; text-align: right;">
+                        @if ($errors->has('name_ar'))
+                          <span class="text-danger">{{ $errors->first('name_ar') }}</span>
+                        @endif
+                    </div>
+                </div>
 
                 <div class="col-md-3">
                     <div class="form-group">
@@ -53,7 +63,7 @@
                         </div><br>
                         <div class="input-group">
                             <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="customFile2" tabindex="2" name="image">
+                                <input type="file" class="custom-file-input" id="customFile2" tabindex="3" name="image">
                                 <label class="custom-file-label" for="customFile">Choose file</label>
                             </div>
                             @if ($errors->has('image'))
@@ -66,7 +76,7 @@
             </div>
         </div>
         <div class="card-footer" align="center">
-            <button type="submit" id="submitBtn" tabindex="3" class="btn btn-primary  btn-flat"><i class="fas fa-save"></i> Save</button>
+            <button type="submit" id="submitBtn" tabindex="4" class="btn btn-primary  btn-flat"><i class="fas fa-save"></i> Save</button>
             <button type="reset" value="Reset" id="resetbtn" tabindex="p" class="btn btn-secondary  btn-flat"><i class="fas fa-undo-alt"></i> Reset</button>
             
         </div>

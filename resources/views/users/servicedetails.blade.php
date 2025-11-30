@@ -18,35 +18,20 @@
   </div>
 </section>
 
-
-<!--=================================
- Premium Features -->
-
 <section class="page-section-ptb">
   <div class="container">
     <div class="row">
       <div class="col-lg-6">
-        <img class="img-fluid mx-auto" src="{{ asset('storage/services/' . $service_detail['image']) }}" alt="">
+        <img class="img-fluid mx-auto" src="{{ asset('storage/services/' . $service['image']) }}" alt="">
       </div>
       <div class="col-lg-6 sm-mt-50 align-self-center">
         <div class="section-title">
-          <h2 class="title-effect">{{$service_detail['name']}} </h2>
-         <!--  <p class="mt-30">Webster's ultimate, easy to use and customizable UI elements make it most customizable template on the market.</p> -->
+          <h2 class="title-effect">{{$service['name']}} </h2>
         </div>
-        <p> {!! str_replace('</p>', '', $service_detail['details']) !!} </p>
+        <p> {!! str_replace('</p>', '', $service['details']) !!} </p>
          
       </div>
    </div>
   </div>
 </section>
-
-<!--=================================
- Premium Features -->
-
-
-
-
-
-
-
 </x-userlayout>

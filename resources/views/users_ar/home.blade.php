@@ -1,11 +1,5 @@
 <x-userlayout-ar>
 
-<!--=================================
- header -->
-
-<!--=================================
- banner -->
-
 <section class="rev-slider">
   <div id="rev_slider_263_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="webster-construction" data-source="gallery" style="margin:0px auto;background:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
 <!-- START REVOLUTION SLIDER 5.4.6.3 fullwidth mode -->
@@ -105,7 +99,7 @@
         <div class="feature-info">
           <h4 class="mt-20">Industrial Projects</h4>
            <p>We deliver large-scale industrial and commercial projects with precision, safety, and efficiency. From fabrication to installation, PAC ensures durable and future-ready solutions.</p>
-          <a class="button icon-color mt-20" href="{{url('services')}}">Read more <i class="fa fa-angle-right"></i></a>
+          <a class="button icon-color mt-20" href="{{ route('users.services.ar') }}">Read more <i class="fa fa-angle-right"></i></a>
         </div>
        </div>
       </div>
@@ -117,7 +111,7 @@
         <div class="feature-info">
           <h4 class="mt-20 text-white">Facility Maintenance</h4>
            <p class="text-white">Our expert team provides reliable maintenance solutions for industrial, commercial, and residential facilities—ensuring smooth operations, safety, and long-term performance.</p>
-          <a class="button icon-color text-white mt-20" href="{{url('services')}}">Read more <i class="fa fa-angle-right"></i></a>
+          <a class="button icon-color text-white mt-20" href="{{ route('users.services.ar') }}">Read more <i class="fa fa-angle-right"></i></a>
         </div>
        </div>
       </div>
@@ -129,15 +123,13 @@
         <div class="feature-info">
           <h4 class="mt-20 text-white">Government & Infrastructure</h4>
            <p class="text-white">PAC partners with government and institutional sectors to deliver infrastructure projects that meet the highest standards of compliance, durability, and safety.</p>
-          <a class="button icon-color mt-20" href="{{url('services')}}">Read more <i class="fa fa-angle-right"></i></a>
+          <a class="button icon-color mt-20" href="{{ route('users.services.ar') }}">Read more <i class="fa fa-angle-right"></i></a>
         </div>
        </div>
       </div>
      </div>
    </div>
 </section>
-<!--=================================
- special-feature -->
 
  <!--=================================
 about- -->
@@ -151,18 +143,14 @@ about- -->
     <div class="col-lg-6 sm-mt-30">
         <div class="section-title line lef mb-20">
           <h6 class="subtitle">About Us</h6>
-          <h2 class="title">{{ $about->welcome }}</h2>
-          <!-- <p class="mt-30">Simply dummy text of the printing and typesetting industry.  when an unknown printer took  scrambled it to make a type specimen book.</p> -->
+          <h2 class="title">{{ $about->welcome_ar }}</h2>
         </div>
-        <p>{!! str_replace('</p>', '', $about->our_journey) !!}</p>
+        <p>{!! str_replace('</p>', '', $about->our_journey_ar) !!}</p>
        
     </div>
   </div>
  </div>
 </section>
-
-<!--=================================
-about- -->
 
 <!--=================================
 counter-->
@@ -212,17 +200,6 @@ counter-->
 </section>
 
 <!--=================================
-counter-->
-
-<!--=================================
- portfolio -->
-
- 
-
-<!--=================================
- portfolio -->
-
-<!--=================================
  Our activities -->
 
 <section class="our-sercive1 page-section-1-pt">
@@ -247,9 +224,9 @@ counter-->
                     <span class="ti-shield theme-color" aria-hidden="true"></span>
                   </div>
                    <div class="feature-info">
-                  <h5>{{$featured->name}}</h5>
-                  <p> {{ Str::words(strip_tags($featured->details), 40) }} </p>
-                  <a class="button icon-color" href="{{ route('users.servicedetails', $featured->slug) }}">Read more <i class="fa fa-angle-right"></i></a>
+                  <h5>{{$featured->name_ar}}</h5>
+                  <p> {{ Str::words(strip_tags($featured->details_ar), 40) }} </p>
+                  <a class="button icon-color" href="{{ route('users.servicedetails.ar', $featured->slug) }}">Read more <i class="fa fa-angle-right"></i></a>
                   </div>
                </div>
           </div>
@@ -266,17 +243,6 @@ counter-->
     </div>
  </div>
 </section>
-
-<!--=================================
-our activities -->
-
- <!--=================================
-team-->
-
-
-
- <!--=================================
-team-->
 
 <!--=================================
 Meet our creative team  -->
@@ -310,18 +276,4 @@ Meet our creative team  -->
     </div>
    </div>
 </section>
-
-<!--=================================
- counter -->
-
-<!--=================================
- action box -->
-
-
-
-<!--=================================
- action box -->
-
-<!--=================================
- footer -->
 </x-userlayout-ar>

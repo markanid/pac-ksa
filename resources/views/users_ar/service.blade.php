@@ -17,13 +17,6 @@
   </div>
 </section>
 
-<!--=================================
-page-title -->
-
-
-<!--=================================
- Premium Features -->
-
 <section class="our-clients theme-bg text-white page-section-ptb position-relative">
   <div class="container">
     <div class="row">
@@ -34,9 +27,6 @@ page-title -->
   </div>
 </section>
 
-<!--=================================
- service -->
-
 <section class="secrvice-blog pb-80">
   <div class="container">
     <div class="row">
@@ -46,8 +36,8 @@ page-title -->
         <div class="card border-0  box-content o-hidden h-100">
           <img class="" src="{{ asset('storage/services/' . $service->image) }}" alt="" style="width: 350px;height: 350px;padding: 20px 20px 20px 35px;">
           <div class="p-4">
-            <h4 class="fw-5"><a href="{{ route('users.servicedetails', $service->slug) }}" class="text-black"> {{$service->name}}</a></h4>
-            <p class="mb-0 pb-0 text-black"> {{ Str::words(strip_tags($service->details), 40) }}</p>
+            <h4 class="fw-5"><a href="{{ route('users.servicedetails.ar', $service->slug) }}" class="text-black"> {{$service->name_ar}}</a></h4>
+            <p class="mb-0 pb-0 text-black"> {{ Str::words(strip_tags($service->details_ar), 40) }}</p>
           </div>
         </div>
       </div>

@@ -27,9 +27,9 @@ class ServiceController extends Controller
     public function createOrEdit($id = null)
     {
         $service = $id ? Service::findOrFail($id) : new Service();
-        $data['title'] = $id ? "Edit Service" : "Create Service";
-        $data['service'] = $service;
-        $data['page']   = "Service";
+        $data['title']      = $id ? "Edit Service" : "Create Service";
+        $data['service']    = $service;
+        $data['page']       = "Service";
         return view('admin.services.create', $data);
     }
 
@@ -38,7 +38,9 @@ class ServiceController extends Controller
         $validated = $request->validate([
             'name'          => 'required|string|max:500',
             'details'       => 'nullable|string',
-            'meta_title'       => 'nullable|string',
+            'name_ar'       => 'required|string|max:500',
+            'details_ar'    => 'nullable|string',
+            'meta_title'    => 'nullable|string',
             'description'   => 'nullable|string|max:2000',
             'keyword'       => 'nullable|string|max:1000',
             'image'         => 'image|mimes:jpeg,png,jpg,gif,svg,webp,avif|max:10240',
@@ -94,6 +96,7 @@ class ServiceController extends Controller
         $data['page']       = "Service";
         return view('admin.services.view',$data);      
     }
+
     public function destroy($id=null)
     {
         $service = Service::findOrFail($id);
@@ -103,21 +106,5 @@ class ServiceController extends Controller
         $service->delete();
         return redirect()->route('services.index')->with('success', 'Record deleted successfully');
     }
-
-
- public function updateFeatured(Request $request)
-{
-    $service = Service::find($request->id);
-
-    if ($service) {
-        $service->featured = $request->featured;
-        $service->save();
-
-        return response()->json(['message' => 'Updated successfully']);
-    }
-
-    return response()->json(['message' => 'Service not found'], 404);
-}
-
 
 }

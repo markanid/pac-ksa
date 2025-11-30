@@ -1,8 +1,6 @@
 <x-userlayout-ar>
 
- 
-
-<section class="page-title bg-overlay-black-60 jarallax" data-speed="0.6" data-img-src="img/bg/about.jpg">
+<section class="page-title bg-overlay-black-60 jarallax" data-speed="0.6" data-img-src="{{ asset('img/bg/about.jpg') }} ">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
@@ -18,13 +16,6 @@
     </div>
   </div>
 </section>
-
-<!--=================================
-page-title -->
-
-
-<!--=================================
- About-->
 
 <section class="page-section-ptb">
   <div class="container">
@@ -42,7 +33,6 @@ page-title -->
         <div class="section-title">
             <h6> {{ $about['welcome_ar'] }}</h6>
             <h2 class="title-effect">Get to know us better.</h2>
-           <!--  <p>We truly care about our users and our product. We are dedicated to providing you with the best experience possible. </p> -->
           </div>
           <p> {!! str_replace('</p>', '', $about['our_journey_ar']) !!}  </p>
          
@@ -94,23 +84,15 @@ page-title -->
               </div>
               <div class="acd-group">
                   <a href="#" class="acd-heading">02. Our Commitment & Collaboration</a>
-                  <div class="acd-des"> {!! str_replace('</p>', '', $about['mission_ar']) !!}</div>
+                  <div class="acd-des"> {!! str_replace('</p>', '', $about['commitment_ar']) !!}</div>
               </div> 
                <div class="acd-group">
                   <a href="#" class="acd-heading">03. Health & Safety Policy</a>
-                  <div class="acd-des"> {!! str_replace('</p>', '', $about['glimbse_ar']) !!}</div>
+                  <div class="acd-des"> {!! str_replace('</p>', '', $about['hspolicy_ar']) !!}</div>
               </div> 
           </div>
       </div>
     </div>
  </div>
 </section>
-
-<!--=================================
-our activities -->
-
-
-
-
-
 </x-userlayout-ar>

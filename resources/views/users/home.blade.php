@@ -1,11 +1,5 @@
 <x-userlayout>
 
-<!--=================================
- header -->
-
-<!--=================================
- banner -->
-
 <section class="rev-slider">
   <div id="rev_slider_263_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="webster-construction" data-source="gallery" style="margin:0px auto;background:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
 <!-- START REVOLUTION SLIDER 5.4.6.3 fullwidth mode -->
@@ -152,7 +146,6 @@ about- -->
         <div class="section-title line lef mb-20">
           <h6 class="subtitle">About Us</h6>
           <h2 class="title">{{ $about->welcome }}</h2>
-          <!-- <p class="mt-30">Simply dummy text of the printing and typesetting industry.  when an unknown printer took  scrambled it to make a type specimen book.</p> -->
         </div>
         <p>{!! str_replace('</p>', '', $about->our_journey) !!}</p>
        
@@ -258,17 +251,6 @@ counter-->
 </section>
 
 <!--=================================
-our activities -->
-
- <!--=================================
-team-->
-
-
-
- <!--=================================
-team-->
-
-<!--=================================
 Meet our creative team  -->
 
 
@@ -300,17 +282,6 @@ Meet our creative team  -->
     </div>
    </div>
 </section>
-
-<!--=================================
- counter -->
-
-<!--=================================
- action box -->
-
-
-
-<!--=================================
- action box -->
 
 <!--=================================
  footer -->
