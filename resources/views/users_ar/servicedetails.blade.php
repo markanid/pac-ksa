@@ -1,4 +1,4 @@
-<x-userlayout-ar>
+<x-userlayout-ar :service="$service">
 
 <section class="page-title bg-overlay-black-60 jarallax" data-speed="0.6" data-img-src="{{ asset('img/bg/services-bg.webp') }}">
   <div class="container">

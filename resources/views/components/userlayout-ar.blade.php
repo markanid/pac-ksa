@@ -1,77 +1,66 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-
    @php
-            use Illuminate\Support\Str;
-            if (!empty($metadata)) {
-                $isHome                 = request()->routeIs('users.home.ar');
-                $isAbout                = request()->routeIs('users.aboutus.ar');
-                $isServices             = request()->routeIs('users.services.ar');
-                $isServiceDetails       = request()->routeIs('users.servicedetails.ar');
-                $isPortfolios           = request()->routeIs('users.projects.ar');
-                $isContact              = request()->routeIs('users.contactus.ar');
-                $firstPart              = Str::of($metadata->title)->before('|')->trim();
-                $logoUrl                = asset('storage/meta_datas/' . $metadata->og_image);
-
-                $item = $isServiceDetails && isset($service) ? $service : null;
-
-                if ($item) {
-                    // Determine title
-                    $title = $item->meta_title ?? 
-                            ($item->heading ?? 
-                            ($item->name ?? ''));
-
-                    // Determine description
-                    $description = $item->description ?? 
-                                ($item->meta_description ?? 
-                                ($item->heading ?? ''));
-
-                    // Determine keywords
-                    $keyword = $item->keyword ?? '';
-
-                    // Determine image path
-                    $folder = $isServiceDetails ? 'services' : 'projects';
-                    $imagePath = $item->image ?? 
-                                ($item->desktop_image ?? null);
-                    $pageImage = $imagePath ? asset("storage/{$folder}/{$imagePath}") : $logoUrl;
-
-                    $pageTitle      = trim($firstPart . ' | ' . $title);
-                    $pageDescription= $description;
-                    $pageKeyword    = $keyword;
-
-                } else {
-                    $pageTitle      = $metadata->title;
-                    $pageDescription= $metadata->desciption; 
-                    $pageKeyword    = $metadata->keyword; 
-                    $pageImage      = $logoUrl;
-                }
-
-                // Final fallback in case title or description is empty
-                $pageTitle      = $pageTitle ?: $metadata->title;
-                $pageDescription= $pageDescription ?: $metadata->desciption;
-                $pageKeyword    = $pageKeyword ?: $metadata->keyword;
-
-                // Append route-specific title suffix
-                if ($isHome) {
-                    $pageTitle = $metadata->title . ' | Home';
-                } elseif ($isAbout) {
-                    $pageTitle = $metadata->title . ' | About Us';
-                } elseif ($isServices) {
-                    $pageTitle = $metadata->title . ' | Services';
-                } elseif ($isPortfolios) {
-                    $pageTitle = $metadata->title . ' | Projects';
-                } elseif ($isContact) {
-                    $pageTitle = $metadata->title . ' | Contact Us';
-                }
-                
-            } else {
-                // Provide sensible defaults in case $metadata is null
-                $pageTitle      = 'Apex Soft Labs – Cloud ERP and Web Development Company';
-                $pageDescription= 'Default Description';
-                $pageKeyword    = 'Default Keyword';
-                $pageImage      = asset('default-image.jpg'); // Replace with a real fallback image path
-            }
+        use Illuminate\Support\Str;
+        if (!empty($metadata)) {
+        $isHome                 = request()->routeIs('users.home.ar');
+        $isAbout                = request()->routeIs('users.aboutus.ar');
+        $isServices             = request()->routeIs('users.services.ar');
+        $isServiceDetails       = request()->routeIs('users.servicedetails.ar');
+        $isProjects             = request()->routeIs('users.projects.ar');
+        $isContact              = request()->routeIs('users.contactus.ar');
+        $firstPart              = Str::of($metadata->title)->before('|')->trim();
+        $logoUrl                = asset('storage/meta_datas/' . $metadata->og_image);
+        $item = $isServiceDetails && isset($service) ? $service : null;
+        if ($item) {
+          // Determine title
+          $title = $item->meta_title ?? 
+          ($item->heading ?? 
+          ($item->name ?? ''));
+          // Determine description
+          $description = $item->description ?? 
+          ($item->meta_description ?? 
+          ($item->heading ?? ''));
+          // Determine keywords
+          $keyword = $item->keyword ?? '';
+          // Determine image path
+          $folder = $isServiceDetails ? 'services' : null;
+          $imagePath = $item->image ?? 
+          ($item->desktop_image ?? null);
+          $pageImage = $imagePath ? asset("storage/{$folder}/{$imagePath}") : $logoUrl;
+          $pageTitle      = trim($firstPart . ' | ' . $title);
+          $pageDescription= $description;
+          $pageKeyword    = $keyword;
+        } else {
+          $pageTitle      = $metadata->title;
+          $pageDescription= $metadata->desciption; 
+          $pageKeyword    = $metadata->keyword; 
+          $pageImage      = $logoUrl;
+        }
+        // Final fallback in case title or description is empty
+        $pageTitle      = $pageTitle ?: $metadata->title;
+        $pageDescription= $pageDescription ?: $metadata->desciption;
+        $pageKeyword    = $pageKeyword ?: $metadata->keyword;
+        // Append route-specific title suffix
+        if ($isHome) {
+          $pageTitle = $firstPart . ' | Home';
+        } elseif ($isAbout) {
+          $pageTitle = $firstPart . ' | About Us';
+        } elseif ($isServices) {
+          $pageTitle = $firstPart . ' | Services';
+        } elseif ($isProjects) {
+          $pageTitle = $firstPart . ' | Projects';
+        } elseif ($isContact) {
+          $pageTitle = $firstPart . ' | Contact Us';
+        }
+      } else {
+        // Provide sensible defaults in case $metadata is null
+        $pageTitle      = 'Pearl Asia – Industrial Company';
+        $pageDescription= 'Default Description';
+        $pageKeyword    = 'Default Keyword';
+        $pageImage      = asset('default-image.jpg'); // Replace with a real fallback image path
+      }
         @endphp 
  <title>{{ $pageTitle }}</title>
         <meta charset="utf-8">
@@ -92,12 +81,13 @@
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="img/logo1.jpg" />
-<!-- Arabic Font -->
-<link rel="stylesheet" href="{{ asset('css/rtl.css') }}">
 
 <!-- font -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900">
+<!-- Arabic Font -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap">
+<link rel="stylesheet" href="{{ asset('css/rtl.css') }}">
 
 <!-- Plugins -->
 <link rel="stylesheet" type="text/css" href="{{ asset('css/plugins-css.css') }}" />
@@ -141,8 +131,8 @@
       <div class="col-lg-6 col-md-6 xs-mb-10">
         <div class="topbar-call text-center text-md-start">
           <ul>
-            <li><i class="fa fa-envelope-o theme-color"></i> {{$contact->email}}</li>
-             <li><i class="fa fa-phone"></i> <a href="tel:+7042791249"> <span>{!! implode(',', json_decode($contact->phones, true)) !!} </span> </a> </li>
+            <li dir="ltr"><i class="fa fa-envelope-o theme-color"></i> {{$contact->email}}</li>
+             <li dir="ltr"><i class="fa fa-phone"></i> <a href="#"> <span dir="ltr">{!! implode(',', json_decode($contact->phones, true)) !!} </span> </a> </li>
           </ul>
         </div>
       </div>
@@ -177,7 +167,7 @@
      <!-- menu start -->
        <nav id="menu" class="mega-menu">
         <!-- menu list items container -->
-        <section class="menu-list-items">
+        <section class="menu-list-items" style="height:100px">
           <!-- menu logo -->
           <ul class="menu-logo">
               <li>
@@ -187,11 +177,25 @@
           <!-- menu links -->
           <div class="menu-bar">
               <ul class="menu-links">
-                <li class="active"><a href="/ar">الرئيسية</a></li>
-                <li><a href="/ar/aboutus">من نحن</a></li>
-                <li><a href="/ar/services">خدماتنا</a></li>
-                <li><a href="/ar/projects">مشاريعنا</a></li>
-                <li><a href="/ar/contactus">اتصل بنا</a></li>
+                <li class="{{ request()->routeIs('users.home.ar') ? 'active' : '' }}">
+                    <a href="/ar">الرئيسية</a>
+                </li>
+
+                <li class="{{ request()->routeIs('users.aboutus.ar') ? 'active' : '' }}">
+                    <a href="{{url('/ar/aboutus')}}">من نحن</a>
+                </li>
+
+                <li class="{{ request()->routeIs('users.services.ar') || request()->routeIs('users.servicedetails.ar') ? 'active' : '' }}">
+                    <a href="{{url('/ar/services')}}">خدماتنا</a>
+                </li>
+
+                <li class="{{ request()->routeIs('users.projects.ar') ? 'active' : '' }}">
+                    <a href="{{url('/ar/projects')}}">مشاريعنا</a>
+                </li>
+
+                <li class="{{ request()->routeIs('users.contactus.ar') ? 'active' : '' }}">
+                    <a href="{{url('/ar/contactus')}}">اتصل بنا</a>
+                </li>
               </ul>
           </div>
         </section>
