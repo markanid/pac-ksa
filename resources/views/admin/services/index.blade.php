@@ -137,32 +137,6 @@
                 title: '{{ session('info') }}'
             });
         @endif
-
-        // AJAX: Update featured status
-        $('.featured-checkbox').change(function () {
-            var checkbox = $(this);
-            var id = checkbox.data('id');
-            var featured = checkbox.is(':checked') ? 1 : 0;
-
-            $.post("{{ route('services.updateFeatured') }}", {
-                id: id,
-                featured: featured,
-                _token: '{{ csrf_token() }}'
-            }, function (data) {
-                Toast.fire({
-                    icon: 'success',
-                    title: featured ? 'Featured added' : 'Featured removed'
-                });
-            }).fail(function () {
-                // Revert checkbox state on failure
-                checkbox.prop('checked', !checkbox.is(':checked'));
-
-                Toast.fire({
-                    icon: 'error',
-                    title: 'Something went wrong!'
-                });
-            });
-        });
     });
 </script>
 
