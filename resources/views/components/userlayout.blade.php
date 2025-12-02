@@ -315,5 +315,18 @@
       <script src="{{ asset('js/revolution-custom.js') }}"></script>
       <!-- custom -->
       <script src="{{ asset('js/custom.js') }}"></script>
+
+      <script>
+      document.addEventListener("DOMContentLoaded", function() {
+         let f = document.getElementById("contactform");
+         if (f) {
+            f.addEventListener("submit", function(e) {
+                  // Remove all template JS overrides
+                  e.stopImmediatePropagation(); 
+                  // Allow normal form submit
+            }, true);
+         }
+      });
+      </script>
    </body>
 </html>

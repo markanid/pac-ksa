@@ -1,4 +1,34 @@
-body {
+/* Make text RTL without flipping page layout */
+html[lang="ar"], body[lang="ar"] {
+    direction: rtl;
+    unicode-bidi: plaintext;
+}
+
+/* Align text only */
+.rtl-text, [lang="ar"] {
+    text-align: right !important;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* Keep layout LTR */
+.wrapper,
+header,
+.menu,
+footer,
+.row,
+.container,
+.col-lg-*, .col-md-* {
+    direction: ltr !important;
+}
+
+/* Fix menu items to display RTL text but keep structure */
+.menu-links > li > a {
     direction: rtl;
     text-align: right;
+}
+
+/* Fix phone/email direction */
+[dir="ltr"] {
+    direction: ltr !important;
+    text-align: left !important;
 }

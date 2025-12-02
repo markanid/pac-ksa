@@ -17,6 +17,10 @@
             <td>{{ $data['email'] }}</td>
         </tr>
         <tr>
+            <th align="left">Phone</th>
+            <td>{{ $data['phone'] }}</td>
+        </tr>
+        <tr>
             <th align="left">Message</th>
             <td>{{ $data['message'] }}</td>
         </tr>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
    @php
         use Illuminate\Support\Str;
@@ -87,7 +87,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900">
 <!-- Arabic Font -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap">
-<link rel="stylesheet" href="{{ asset('css/rtl.css') }}">
 
 <!-- Plugins -->
 <link rel="stylesheet" type="text/css" href="{{ asset('css/plugins-css.css') }}" />
@@ -113,9 +112,11 @@
 <!-- Style customizer -->
 <link rel="stylesheet" type="text/css" href="{{ asset('css/skins/skin-red.css') }}" data-style="styles"/>
 
+{{-- <link rel="stylesheet" href="{{ asset('css/rtl.css') }}"> --}}
+
 </head>
 
-<body>
+<body lang="ar">
 
 <div class="wrapper">
 
@@ -360,7 +361,18 @@ action box- -->
 <!-- custom -->
 <script src="{{ asset('js/custom.js') }}"></script>
 
-
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    let f = document.getElementById("contactform");
+    if (f) {
+        f.addEventListener("submit", function(e) {
+            // Remove all template JS overrides
+            e.stopImmediatePropagation(); 
+            // Allow normal form submit
+        }, true);
+    }
+});
+</script>
 
 </body>
 </html>

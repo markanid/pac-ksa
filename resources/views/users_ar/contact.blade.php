@@ -104,8 +104,21 @@ page-title -->
               <h2 class="title-effect">Contact Us</h2>
             </div>
             <p class="mb-50">It would be great to hear from you! If you got any questions, please do not hesitate to send us a message. We are looking forward to hearing from you! We reply within <span class="tooltip-content" title="Mon-Fri 10am–7pm (GMT +1)" data-bs-toggle="tooltip" data-bs-placement="top"> 24 hours!</span></p>
-            <div id="formmessage">Success/Error Message Goes Here</div>
-            <form id="contactform" role="form" method="post" action="php/contact-form.php">
+            <div id="formmessage">
+            @if(session('success_message'))
+                <div class="alert alert-success">
+                    {{ session('success_message') }}
+                </div>
+            @endif
+
+            @if(session('error_message'))
+                <div class="alert alert-danger">
+                    {{ session('error_message') }}
+                </div>
+            @endif
+            </div>
+            <form id="contactform" role="form" method="post" action="{{ route('send.email') }}" >
+            @csrf
               <div class="contact-form clearfix">
                 <div class="section-field">
                   <input id="name" type="text" placeholder="Name*" class="form-control"  name="name">
@@ -120,14 +133,13 @@ page-title -->
                   <textarea class="input-message form-control" placeholder="Comment*"  rows="7" name="message"></textarea>
                 </div>
                   <!-- Google reCaptch-->
-                <div class="g-recaptcha section-field clearfix" data-sitekey="6LfNmS0UAAAAAO_ZVFQoQmkGPMlQXmKgVbizHFoq"></div>
-                <div class="section-field submit-button">
-                  <input type="hidden" name="action" value="sendEmail"/>
-                  <button id="submit" name="submit" type="submit" value="Send" class="button"><span> Send message </span> <i class="fa fa-paper-plane"></i></button>
-                </div>
-              </div>
+                <!--<div class="g-recaptcha section-field clearfix" data-sitekey="6LfNmS0UAAAAAO_ZVFQoQmkGPMlQXmKgVbizHFoq"></div>-->
+                <!--<div class="section-field submit-button">-->
+                  <button type="submit" class="button"><span> Send message </span> <i class="fa fa-paper-plane"></i></button>
+                <!--</div>-->
+              <!--</div>-->
             </form>
-            <div id="ajaxloader" style="display:none"><img class="mx-auto mt-30 mb-30 d-block" src="../../images/pre-loader/loader-02.svg" alt=""></div>
+            <!--<div id="ajaxloader" style="display:none"><img class="mx-auto mt-30 mb-30 d-block" src="../../images/pre-loader/loader-02.svg" alt=""></div>-->
           </div>
         </div>
       </div>
