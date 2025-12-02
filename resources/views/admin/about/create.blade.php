@@ -208,7 +208,7 @@ $(function () {
             }
         }
     });
-    $('#whychoose').summernote({
+    $('#whychooseus').summernote({
         height: 170 // Set height in pixels (adjust as needed)
     });
     $('#whychooseus_ar').summernote({
