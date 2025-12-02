@@ -95,7 +95,6 @@ class UserPageController extends Controller
             'name'    => 'required|string|max:255',
             'email'   => 'nullable|string|email|max:100',
             'message' => 'nullable|string|max:1000',
-            'subject' => 'nullable|string|max:255',
             'phone'   => 'nullable|string|max:20',
         ]);
 
