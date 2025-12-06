@@ -36,12 +36,13 @@ class SlidersController extends Controller
     public function storeOrUpdate(Request $request)
     {
         $validated = $request->validate([
-
-            'section'          => 'required|string|max:500',
-            'heading_1'      => 'string',
-            'heading_2'      => 'string',
-            'title'          => 'string',
-            'image'          => 'image|mimes:jpeg,png,jpg,gif,svg,webp,avif|max:10240'
+            'heading_1'     => 'string',
+            'heading_2'     => 'string',
+            'title'         => 'string',
+            'heading_1ar'   => 'string',
+            'heading_2ar'   => 'string',
+            'title_ar'      => 'string',
+            'image'         => 'image|mimes:jpeg,png,jpg,gif,svg,webp,avif|max:10240'
         ]);
 
         $isNew  = empty($request->id);
@@ -83,8 +84,7 @@ class SlidersController extends Controller
 
     public function show($id=null)
     {
-        $about = Sliders::latest('created_at')->first();
-        $data['sliders']  = $sliders;
+        $data['slider'] = Sliders::where('id', $id)->firstOrFail();
         $data['title']  = "Sliders View";
         $data['page']   = "Sliders";
         return view('admin.sliders.view',$data);      

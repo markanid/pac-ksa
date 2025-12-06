@@ -19,12 +19,12 @@
     
     <!-- MAIN IMAGE -->
     <img src="{{ asset('storage/sliders/' . $slider->image) }}"  
-         alt="{{ $slider->heading_1 ?? 'Slider Image' }}"  
+         alt="{{ $slider->heading_1ar ?? 'Slider Image' }}"  
          data-bgposition="center center" data-bgfit="cover" 
          data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
 
     <!-- LAYER NR. 2 (Heading 1) -->
-    @if(!empty($slider->heading_1))
+    @if(!empty($slider->heading_1ar))
     <div class="tp-caption tp-resizeme"
          id="slide-{{ $loop->index }}-layer-1"
          data-x="65" data-y="center" data-voffset="-140"
@@ -37,12 +37,12 @@
          style="z-index:6; font-size:73px; line-height:73px; 
                 font-weight:700; color:#353535; 
                 font-family:Poppins;text-transform:uppercase;">
-         {{ $slider->heading_1 }}
+         {{ $slider->heading_1ar }}
     </div>
     @endif
 
     <!-- LAYER NR. 3 (Heading 2) -->
-    @if(!empty($slider->heading_2))
+    @if(!empty($slider->heading_2ar))
     <div class="tp-caption tp-resizeme rev-color"
          id="slide-{{ $loop->index }}-layer-2"
          data-x="65" data-y="center" data-voffset="-72"
@@ -55,12 +55,12 @@
          style="z-index:7; font-size:73px; line-height:73px; 
                 font-weight:700; color:#FFD200; 
                 font-family:Poppins;text-transform:uppercase;">
-         {{ $slider->heading_2 }}
+         {{ $slider->heading_2ar }}
     </div>
     @endif
 
     <!-- LAYER NR. 4 (Title) -->
-    @if(!empty($slider->title))
+    @if(!empty($slider->title_ar))
     <div class="tp-caption tp-resizeme"
          id="slide-{{ $loop->index }}-layer-3"
          data-x="66" data-y="center" data-voffset="15"
@@ -73,7 +73,7 @@
          style="z-index:8; font-size:30px; line-height:36px; 
                 font-weight:700; color:#353535; 
                 font-family:Poppins;">
-         {{ $slider->title }}
+         {{ $slider->title_ar }}
     </div>
     @endif
 

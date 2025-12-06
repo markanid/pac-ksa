@@ -33,22 +33,40 @@
 
                <div class="col-md-6">
                     <div class="form-group">
-                        <label>title </label>
-                        <input type="text" name="title" tabindex="2" class="form-control" value="{{ !empty($sliders->title) ? $sliders->title : '' }}">
+                        <label>Title </label>
+                        <input type="text" name="title" tabindex="1" class="form-control" value="{{ !empty($sliders->title) ? $sliders->title : '' }}">
                         @if ($errors->has('title'))
                           <span class="text-danger">{{ $errors->first('title') }}</span>
                         @endif
                     </div>
                 </div>
 
-               
+               <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Title [Arabic] </label>
+                        <input type="text" name="title_ar" tabindex="2" class="form-control" value="{{ !empty($sliders->title_ar) ? $sliders->title_ar : '' }}" style="direction: rtl; text-align: right;">
+                        @if ($errors->has('title_ar'))
+                          <span class="text-danger">{{ $errors->first('title_ar') }}</span>
+                        @endif
+                    </div>
+                </div>
                  
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Heading 1</label>
-                        <input type="text" name="heading_1" tabindex="2" class="form-control" value="{{ !empty($sliders->heading_1) ? $sliders->heading_1 : '' }}">
+                        <input type="text" name="heading_1" tabindex="3" class="form-control" value="{{ !empty($sliders->heading_1) ? $sliders->heading_1 : '' }}">
                         @if ($errors->has('heading_1'))
                           <span class="text-danger">{{ $errors->first('heading_1') }}</span>
+                        @endif
+                    </div>
+                </div>
+                 
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Heading 1 [Arabic]</label>
+                        <input type="text" name="heading_1ar" tabindex="4" class="form-control" value="{{ !empty($sliders->heading_1ar) ? $sliders->heading_1ar : '' }}" style="direction: rtl; text-align: right;">
+                        @if ($errors->has('heading_1ar'))
+                          <span class="text-danger">{{ $errors->first('heading_1ar') }}</span>
                         @endif
                     </div>
                 </div>
@@ -56,26 +74,23 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <label>Heading 2</label>
-                        <input type="text" name="heading_2" tabindex="2" class="form-control" value="{{ !empty($sliders->heading_2) ? $sliders->heading_2 : '' }}">
+                        <input type="text" name="heading_2" tabindex="5" class="form-control" value="{{ !empty($sliders->heading_2) ? $sliders->heading_2 : '' }}">
                         @if ($errors->has('heading_2'))
                           <span class="text-danger">{{ $errors->first('heading') }}</span>
                         @endif
                     </div>
                 </div>
 
-                 <div class="col-md-6">
-    <div class="form-group">
-        <label>Sector</label>
-        <select name="section" tabindex="6" class="form-control">
-          
-            <option value="Team" {{ old('sector', $project->section ?? '') == '' ? 'selected' : '' }}>Team</option>
-           
-        </select>
-        @if ($errors->has('section'))
-            <span class="text-danger">{{ $errors->first('section') }}</span>
-        @endif
-    </div>
-</div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Heading 2 [Arabic]</label>
+                        <input type="text" name="heading_2ar" tabindex="6" class="form-control" value="{{ !empty($sliders->heading_2ar) ? $sliders->heading_2ar : '' }}" style="direction: rtl; text-align: right;">
+                        @if ($errors->has('heading_2ar'))
+                          <span class="text-danger">{{ $errors->first('heading_2ar') }}</span>
+                        @endif
+                    </div>
+                </div>
+
                <div class="col-md-3">
                    <div class="form-group">
                        <label for="customFile">Image</label>
@@ -88,7 +103,7 @@
                        </div><br>
                        <div class="input-group">
                            <div class="custom-file">
-                               <input type="file" class="custom-file-input" id="customFile2" tabindex="6" name="image">
+                               <input type="file" class="custom-file-input" id="customFile2" tabindex="7" name="image">
                                <label class="custom-file-label" for="customFile">Choose file</label>
                            </div>
                            @if ($errors->has('image'))
@@ -100,7 +115,7 @@
             </div>
         </div>
         <div class="card-footer" align="center">
-            <button type="submit" id="submitBtn" tabindex="7" class="btn btn-primary  btn-flat"><i class="fas fa-save"></i> Save</button>
+            <button type="submit" id="submitBtn" tabindex="8" class="btn btn-primary  btn-flat"><i class="fas fa-save"></i> Save</button>
             <button type="reset" value="Reset" id="resetbtn" tabindex="p" class="btn btn-secondary  btn-flat"><i class="fas fa-undo-alt"></i> Reset</button>
         </div>
     </form>
@@ -127,11 +142,6 @@ $(function () {
 
         let fileName = Array.from(this.files).map(f => f.name).join(', ');
         $(this).siblings('.custom-file-label').addClass("selected").html(fileName);
-    });
-
-    // Summernote
-    $('#our_journey').summernote({
-        height: 170 // Set height in pixels (adjust as needed)
     });
     
     $.validator.setDefaults({

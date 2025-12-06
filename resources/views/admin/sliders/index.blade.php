@@ -34,10 +34,10 @@
                         <thead>
                             <tr>
                                 <th>SL No.</th>
-                                 <th>Title </th>
-                                  <th>Heading 1</th>
-                                  <th>Heading 2</th>
-                                  <th>Image</th>
+                                <th>Title </th>
+                                <th>Heading 1</th>
+                                <th>Heading 2</th>
+                                <th>Image</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -46,13 +46,12 @@
                             @foreach($sliders as $row)
                                 <tr>
                                     <td>{{$i++;}}</td>
-                                     <td>{{$row->title}}</td>
-                                     <td>{{$row->heading_1}}</td>
-                                      <td>{{$row->heading_2}}</td>
-                                    
-                                    <td> 
+                                    <td><a href="{{ route('sliders.show', $row->id) }}"> {{ $row->title }}</a></td>
+                                    <td>{{$row->heading_1}}</td>
+                                    <td>{{$row->heading_2}}</td>
+                                    <td>
                                         <img src="{{ $row->image ? asset('storage/sliders/' . $row->image) : asset('uploads/avatar.png') }}" width="100" height="70" alt="Gallery Image">
-                                   </td>
+                                    </td>
                                     <td>
                                         <a class="btn btn-info btn-sm btn-flat" href="{{route('sliders.edit', $row->id)}}"><i class="fas fa-pencil-alt"></i></a>
                                         <a href="#" class="btn btn-danger btn-sm btn-flat delete-btn" data-url="{{ route('sliders.delete', ['id' => $row->id]) }}"><i class="fas fa-trash"></i></a>

@@ -10,7 +10,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="{{route('about.index')}}">{{$page}}</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('sliders.index')}}">{{$page}}</a></li>
                     <li class="breadcrumb-item active">{{$title}}</li>
                 </ol>
             </div>
@@ -24,57 +24,57 @@
     <div class="card-header d-flex justify-content-between align-items-center">
         <h3 class="card-title"><i class="fas fa-users"></i> View {{$page}}</h3>  
         <div class="ml-auto"> 
-            <a href="{{ route('about.create') }}" class="btn btn-sm btn-primary"> <i class="fas fa-plus-circle"></i> Create</a> &nbsp;
-            <a href="{{ route('about.edit', ['id' => $about->id]) }}" class="btn btn-sm btn-info"> <i class="fas fa-pencil-alt"></i> Edit</a> &nbsp;
-            <a href="#" class="btn btn-danger btn-sm btn-flat delete-btn" data-url="{{ route('about.delete', ['id' => $about->id]) }}"><i class="fas fa-trash"></i> Delete</a>
+            <a href="{{ route('sliders.create') }}" class="btn btn-sm btn-primary"> <i class="fas fa-plus-circle"></i> Create</a> &nbsp;
+            <a href="{{ route('sliders.edit', ['id' => $slider->id]) }}" class="btn btn-sm btn-info"> <i class="fas fa-pencil-alt"></i> Edit</a> &nbsp;
+            <a href="{{ route('sliders.index') }}" class="btn btn-sm btn-dark"> <i class="fa fa-arrow-circle-left"></i> Back</a> &nbsp;
         </div> 
     </div>
-    
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" style="margin-bottom: 10px;">
-                    <tbody>
-                        <tr>
-                            <td style="background-color:#096ca5; color:#fff;">Welcome Message</td>
-                            <td><b style="color:#096ca5;">{{ !empty($about->welcome) ? $about->welcome : '' }}</b>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-           </div>
-            <div class="table-responsive">
-                <table class="table table-bordered">
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div>
-                                    @if(!empty($about->image))
-                                        <p><img src="{{asset('storage/abouts/'.$about->image)}}" alt="About Image" style="width: 200px; height: 100px;"></p>
-                                    @else
-                                        <p><img src="{{asset('uploads/default_company_logo.png')}}" alt="OG Image" style="width: 200px; height: 50px;"></p>
-                                    @endif 
-                                </div>
-                            </td>
-                            <td colspan="2">
-                                <span>Glimbse :</span>
-                                <label>{{ !empty($about->glimbse) ? $about->glimbse : '' }}</label>
-                            </td>
-                            <td>
-                                <span>Our Journey :</span>
-                                <label>{!! !empty($about->our_journey) ? $about->our_journey : '' !!}</label>
-                            </td>
-                            <td>
-                                <span>Vision :</span>
-                                <label>{{ !empty($about->vision) ? $about->vision : '' }}</label>
-                            </td>
-                            <td>
-                                <span>Mission :</span>
-                                <label>{{ !empty($about->mission) ? $about->mission : '' }}</label>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" style="margin-bottom: 10px;">
+                <tbody>
+                    <tr>
+                        <td style="background-color:#096ca5; color:#fff;">Title :</td>
+                        <td><b style="color:#096ca5;">{{ $slider->title }}</b></td>
+                        <td dir="rtl"><b style="color:#096ca5;">{{ $slider->title_ar }}</b></td>
+                        <td style="background-color:#096ca5; color:#fff;">: Title [Arabic]</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td rowspan="2">
+                            <span>Image :</span>
+                            <div>
+                                @if(!empty($slider) && !empty($slider->image))
+                                    <img src="{{ asset('storage/sliders/' . $slider->image) }}" alt="Slider Image" class="img-fluid rounded" style="max-height: 200px;">
+                                @else
+                                    <img src="{{ asset('uploads/employees/avatar.png') }}" alt="Slider Photo" class="img-fluid rounded" style="max-height: 200px;">
+                                @endif
+                            </div>
+                        </td>
+                        <td>
+                            <span>Heading 1 :</span>
+                            <label>{{ $slider->heading_1 ?? '' }}</label>
+                        </td>
+                        <td>
+                            <span>Heading 1 [Arabic] :</span>
+                            <label>{{ $slider->heading_1ar ?? '' }}</label>
+                        </td>
+                        <td>
+                            <span>Heading 2 :</span>
+                            <label>{{ $slider->heading_2 ?? '' }}</label>
+                        </td>
+                        <td>
+                            <span>Heading 2 [Arabic] :</span>
+                            <label>{{ $slider->heading_2ar ?? '' }}</label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
